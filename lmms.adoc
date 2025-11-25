@@ -1,0 +1,102 @@
+
+= THE LMMS DESIGN DOC
+:toc:
+
+== History
+
+|===
+| Date | Description
+
+| 25-11-2025 | Peki uploaded the first draft to GitHub.
+|===
+
+== Why was this document created?
+
+This document was created primarly to list and explain the basic principles of the LMMS user experience
+and is meant to serve as a guideline for adding features or changing existing behavior in LMMS.
+
+Given the count of active developers, it's good to have a central, constantly evolving document
+which can serve as a reference point in case there are disagreements on how a thing should be done.
+
+== What is LMMS?
+
+LMMS is a piece of software which wants to allow music production using your computer.
+In other words, LMMS is a Digital Audio Workstation, or DAW for short.
+
+Unlike most DAWs available today, which are commerical software solutions,
+LMMS is a FOSS project developed by people passionate about the software.
+There is no guarantee we cover all possible genres and subgenres of music, all styles of music production, etc.
+It's a volunteer-led project, not a professional one.
+
+A couple words could describe LMMS...
+
+=== LMMS is Simple
+
+*LMMS has one subwindow for one elementary purpose.*
+That means the Song Editor is where you edit your arrangement, the Mixer is where the mixing happens, etc.
+These subwindows interact where necessary, such as the Song Editor allowing tracks to be sent to mixer channels.
+For example, when you expand the Peak Controller from the instrument effects section,
+it tells you to go to the Controller Rack, instead of letting you edit there,
+because controllers are edited from the Controller Rack.
+
+*There's a very small number of ways to do one thing.*
+To be more precise, there's usually only one way to do something,
+with exceptions being made there where the UX can be made more smooth by including more way to access the same functionality.
+For example, you can only change the volume of the instrument from the Instrument View or from its track in the Song Editor.
+
+*It's a constantly developed project.*
+There's no recording.
+There's no direct VST3 support.
+There's no granular synthesizer.
+There's no native limiter plugin.
+The project is developed by volunteers, when they feel like it, and the features are what they want to implement.
+
+=== LMMS is Unconventional
+
+*LMMS has a very weird bundled plugin situation.*
+It includes a combination of native and third-party GUI-less plugins.
+There's no one EQ.
+There's no one limiter.
+There's no one reverb.
+Some plugins are basically broken (ViNyl).
+The clipper is called a Hard Limiter, because it's taken from another plugin project.
+
+*It doesn't take itself too seriously*.
+There are no deadlines.
+There are no shareholders.
+For most devs, it's just a fun side-project.
+
+== LMMS Design Principles
+
+Completely subjective and defined by the developers, testers, designers and other interested parties.
+
+=== LMMS does only what you tell it to
+
+A concrete example is how
+if the user clicks a play button, the track should play until the user stops playing the track.
+The track shouldn't stop when it reaches the end, becuase the user might want to hear the tail of the final reverb,
+or is playing his MIDI keyboard and doesn't wanna be interupted.
+
+We shouldn't make any assumptions for the user.
+This allows us to develop the UI/UX so that it's consistent and leaves learning the ins and outs to the user.
+We're not predicting what the user might do, only saying "if this is how you do it in COMPONENT1, this is how you should do it in COMPONENT2".
+
+If the user opens a window, it's a fair assumption he wants the window opened.
+He doesn't want it bringing him a popup before closing.
+He doesn't want it changing something in the background where he might not be able to see it.
+He just wants it opened.
+
+=== The user has to not be an idiot
+
+Same as with every tool ever created, you have to draw a line in the sand and say "If the user can't put the two and two together, this tool isn't for them".
+
+LMMS doesn't aim to teach the user:
+
+* sound design
+* music theory and terms like: key, octave, BPM, measure, etc.
+* the common conventions of GUI applications
+* how to use a keyboard and mouse
+* etc.
+
+We have to make the assumption that the user can embrace the learning curve, RTFM, read the forums and watch tutorials, ask a chatbot, and so on.
+
