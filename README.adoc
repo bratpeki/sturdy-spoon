@@ -18,9 +18,9 @@ and is meant to serve as a guideline for adding features or changing existing be
 Given the count of active developers, it's good to have a central, constantly evolving document
 which can serve as a reference point in case there are disagreements on how a thing should be done.
 
-== What is LMMS?
+== What LMMS is
 
-LMMS is a piece of software which wants to allow music production using your computer.
+LMMS is a piece of software which allows music production using your computer.
 In other words, LMMS is a Digital Audio Workstation, or DAW for short.
 
 Unlike most DAWs available today, which are commerical software solutions,
@@ -28,16 +28,15 @@ LMMS is a FOSS project developed by people passionate about the software.
 There is no guarantee we cover all possible genres and subgenres of music, all styles of music production, etc.
 It's a volunteer-led project, not a professional one.
 
-A couple words could describe LMMS...
-
-=== LMMS is Simple
+=== LMMS is Simple (except when it isn't)
 
 *LMMS has one subwindow for one elementary purpose.*
 That means the Song Editor is where you edit your arrangement, the Mixer is where the mixing happens, etc.
 These subwindows interact where necessary, such as the Song Editor allowing tracks to be sent to mixer channels.
-For example, when you expand the Peak Controller from the instrument effects section,
-it tells you to go to the Controller Rack, instead of letting you edit there,
-because controllers are edited from the Controller Rack.
+We wish this was entirely respected, and an example of when it isn't is
+when you expand the Peak Controller from the Controller Rack,
+it tells you to go to the instrument effects section, instead of letting you edit there,
+even though all other controllers are edited from the Controller Rack.
 
 *There's a very small number of ways to do one thing.*
 To be more precise, there's usually only one way to do something,
@@ -66,9 +65,36 @@ There are no deadlines.
 There are no shareholders.
 For most devs, it's just a fun side-project.
 
-== LMMS Design Principles
+== What LMMS isn't
 
-Completely subjective and defined by the developers, testers, designers and other interested parties.
+=== LMMS isn't educational software (primarily)
+
+LMMS is used to make music.
+
+OF COURSE you can use it to learn about music, but we as developers aren't aiming to teach the user.
+We wanna make software that doesn't do too much to explain what a scale is, or what a compressor is.
+
+=== LMMS isn't the next big thing
+
+There is a common user request to add trendy stuff into LMMS because it's trendy.
+
+The dev resources are strained enough as it is that adding AI tools,
+support for new experimental sound servers, and so on should be low priority.
+The focus should be on building the software ground up, not top down.
+
+=== LMMS isn't FL Studio or Ableton or Logic or Reaper or Ardour or...
+
+Another common user request is to add stuff becuase it appears in other DAWs.
+
+There's no problem with the request unless it conflicts with common patterns of use in LMMS,
+which are too numerous to list. The rule of thumb is
+"If we didn't do it like this, we don't have to start doing it like this now".
+
+NOTE: This is why I'm a heavy opponent of project folders as a solution to recording.
+We have `samples/soundfonts`, `samples/gig`, and so on, so just add `samples/recording` to keep the logic consistent.
+This is why I say the patterns in LMMS are too numerous to list. - Peki
+
+== LMMS Design Principles
 
 === LMMS does only what you tell it to
 
