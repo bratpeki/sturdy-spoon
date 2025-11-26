@@ -124,5 +124,8 @@ LMMS doesn't aim to teach the user:
 * how to use a keyboard and mouse
 * etc.
 
-We have to make the assumption that the user can embrace the learning curve, RTFM, read the forums and watch tutorials, ask a chatbot, and so on.
+We only facilitate the environment where the user can learn,
+not doing something like writing whole tutorials on scales and chords into the Piano Roll.
 
+We have to make the assumption that the user can embrace the learning curve,
+RTFM, read the forums and watch tutorials, ask a chatbot, and so on.
